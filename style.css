@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+/* Inter 400, 700 */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+/* Lexend Deca 400 */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root {
+  --verydarkblue: hsl(233, 47%, 7%); /* Main background */
+  --darkdesaturatedblue: hsl(244, 38%, 16%); /* Card background */
+  --softviolet: hsl(277, 64%, 61%); /* Accent */
+
+  --white: hsl(0, 0%, 100%); /* Main heading, stats */
+  --slightlytransparentwhite: hsla(0, 0%, 100%, 0.75); /* Main paragraph */
+  --lightlytransparentwhite: hsla(0, 0%, 100%, 0.6); /* Stat headings */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--slightlytransparentwhite);
+  background-color: var(--verydarkblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  margin: 20px;
+  border-radius: 0.5rem;
+  background-color: var(--darkdesaturatedblue);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
+  height: auto;
+  z-index: 1;
+  display: block;
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--softviolet);
+  opacity: 0.5;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 2rem;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.insights {
+  color: var(--softviolet);
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+.h1text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.stats {
+  margin-top: 30px;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.stats > p {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 5px;
+  color: var(--lightlytransparentwhite);
+  letter-spacing: 1px;
+}
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
+
+  img {
+    grid-column: 2;
+    height: 100%;
+    width: auto;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .overlay {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
